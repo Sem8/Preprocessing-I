@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: ;
 }
 ol, ul {
 	list-style: none;
@@ -56,4 +57,268 @@ table {
 html, body {
     height: 100%;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+// variables
+@container-background: #300000;
+@container-width: 1000px;
+@main-text-pink: #FF99FF; 
+@unique-blue: #00FFFF;
+@columns-background: #680000;
+
+
+// mixins
+.nav-design() {
+	color: @main-text-pink;	
+	align-items: center;
+	font-size: 2rem;	
+	padding: 10px;
+	margin: 10px;
+	text-decoration: none;
+
+	&:hover {
+		color: @columns-background;
+		background-color: @main-text-pink;
+		text-transform: uppercase;
+	}
+}
+
+.h3-styles() {
+	color: @unique-blue;	
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px;
+	line-height: 1.5;
+}
+
+.left-column-design() {
+	border: 1px solid white;
+	width: @container-width / 3;
+	background-color: @columns-background;
+	margin: 10px;
+	color: @main-text-pink;	  
+}
+
+.right-column-design() {
+	border: 1px solid white;
+	width: @container-width / 1.5;
+	background-color: @columns-background;
+	margin: 10px;
+	color: @main-text-pink;	 
+	
+}
+
+.soft-skill-designs() {
+	border: 2px solid @unique-blue;
+	width: 30%;
+	border-radius: 100%;
+	font-size: 1.7rem;
+	padding: 5px;
+	text-align: center;
+	margin: 5px 5px;
+	// float: left;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.right-column-right-content-designs() {
+	margin-left: 200px;
+}
+
+.right-column-left-content-designs() {
+	width: 200px;
+	border-radius: 20px;
+	margin: 10px;
+	display: flex;
+	justify-content: flex-start;
+	text-align: center;	
+	
+	background-color: #ff4d4d;
+	h3 {
+		font-size: 4rem;
+	}
+	p {
+		font-size: 1.8rem;
+		line-height: 1;
+	}
+}
+
+.bordered() {
+	border-bottom: 2px dotted @main-text-pink;
+}
+
+// Actual code
+
+.container {
+	background-color: @container-background;
+	max-width: @container-width;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+}
+
+.left-column {	
+	.left-column-design();
+	.profile-pic {
+		width: 80%;
+		height: auto;
+		margin: auto;
+		padding: 10px;
+		margin: 50px;
+		border-radius: 50%;
+		transform: rotate(90deg);
+		overflow: hidden;		
+	}
+	h3 {
+		font-size: 2.5rem;
+		font-weight: 150;
+		border-bottom: 2px dotted @main-text-pink;
+		.h3-styles();
+	}
+	
+} 
+
+.right-column {
+	.right-column-design();
+}
+
+header {
+	width: 100%;
+	nav {
+		display: flex;
+		justify-content: flex-end;
+	}
+	nav a {		
+		.nav-design();
+	}
+}
+
+h1 {
+	font-size: 4rem;
+	font-weight: 500;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px;
+	line-height: 1.5;
+	text-transform: uppercase;	
+}
+h4 {
+	font-size: 2rem;	 
+	font-family: Arial, Helvetica, sans-serif;	
+	margin-left: 10px;
+	
+}
+
+p {
+	font-size: 1.7rem;
+	line-height: 1.5;
+	margin: auto;
+	padding: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.soft-skills {
+	display: flex;	
+	border-top: 2px dotted @main-text-pink;
+	padding-top: 20px;
+	flex-wrap: wrap;
+	margin: 10px;
+	
+	p {
+		.soft-skill-designs();
+	}
+}
+
+.contact h1 {
+	border-top: 2px dotted @main-text-pink;
+	margin: 10px;
+}
+
+.right-column {
+	.work-experience {		
+		margin: 10px;
+	}
+	
+	h3 {
+		font-size: 2.5rem;
+		font-weight: 150;
+		.h3-styles();
+		margin-left: 10px;
+	}
+	
+}
+
+
+// right column contents
+.work-experience {
+	.bordered();
+}
+.Education {
+	.bordered();
+}
+
+
+.right-content {
+	.right-column-right-content-designs();
+}
+
+.left-content {
+	.right-column-left-content-designs();
+
+}
+
+.technical-skills {
+
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 2rem;
+		color: @columns-background;
+		p {
+			background-color: @unique-blue; 
+			margin: 10px;
+			border-radius: 45%;
+		}
+	}	
+}
+
+.hobbies {
+	.content {
+		display: flex;
+		flex-wrap: wrap;
+		p {
+			color: @columns-background;
+			background-color: @main-text-pink;
+			margin: 10px;
+			border-radius: 10px;
+			line-height: 0.5;
+		}		
+	}
+}
+
+
+@media (max-width: 500px) {
+	.container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.right-column {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+	}	
+}
+
+	
+
+
+
+
+
 
