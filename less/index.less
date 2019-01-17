@@ -65,11 +65,14 @@ html {
 // variables
 @container-background: #300000;
 @container-width: 1000px;
+@main-text-pink: #FF99FF; 
+@unique-blue: #00FFFF;
+@columns-background: #680000;
 
 
 // mixins
 .nav-design() {
-	color: #FF99FF;	
+	color: @main-text-pink;	
 	align-items: center;
 	font-size: 2rem;	
 	padding: 10px;
@@ -77,14 +80,14 @@ html {
 	text-decoration: none;
 
 	&:hover {
-		color: #680000;
-		background-color: #FF99FF;
+		color: @columns-background;
+		background-color: @main-text-pink;
 		text-transform: uppercase;
 	}
 }
 
 .h3-styles() {
-	color: #00FFFF;	
+	color: @unique-blue;	
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 10px;
 	line-height: 1.5;
@@ -93,22 +96,22 @@ html {
 .left-column-design() {
 	border: 1px solid white;
 	width: @container-width / 3;
-	background-color: #680000;
+	background-color: @columns-background;
 	margin: 10px;
-	color: #FF99FF;	  
+	color: @main-text-pink;	  
 }
 
 .right-column-design() {
 	border: 1px solid white;
 	width: @container-width / 1.5;
-	background-color: #680000;
+	background-color: @columns-background;
 	margin: 10px;
-	color: #FF99FF;	 
+	color: @main-text-pink;	 
 	
 }
 
 .soft-skill-designs() {
-	border: 2px solid #00FFFF;
+	border: 2px solid @unique-blue;
 	width: 30%;
 	border-radius: 100%;
 	font-size: 1.7rem;
@@ -126,7 +129,7 @@ html {
 
 .right-column-left-content-designs() {
 	width: 200px;
-	border-radius: 20%;
+	border-radius: 20px;
 	margin: 10px;
 	display: flex;
 	justify-content: flex-start;
@@ -137,8 +140,13 @@ html {
 		font-size: 4rem;
 	}
 	p {
-		font-size: 1.7rem;
+		font-size: 1.8rem;
+		line-height: 1;
 	}
+}
+
+.bordered() {
+	border-bottom: 2px dotted @main-text-pink;
 }
 
 // Actual code
@@ -166,7 +174,7 @@ html {
 	h3 {
 		font-size: 2.5rem;
 		font-weight: 150;
-		border-bottom: 2px dotted #FF99FF;
+		border-bottom: 2px dotted @main-text-pink;
 		.h3-styles();
 	}
 	
@@ -213,7 +221,7 @@ p {
 
 .soft-skills {
 	display: flex;	
-	border-top: 2px dotted #FF99FF;
+	border-top: 2px dotted @main-text-pink;
 	padding-top: 20px;
 	flex-wrap: wrap;
 	margin: 10px;
@@ -224,7 +232,7 @@ p {
 }
 
 .contact h1 {
-	border-top: 2px dotted #FF99FF;
+	border-top: 2px dotted @main-text-pink;
 	margin: 10px;
 }
 
@@ -244,6 +252,14 @@ p {
 
 
 // right column contents
+.work-experience {
+	.bordered();
+}
+.Education {
+	.bordered();
+}
+
+
 .right-content {
 	.right-column-right-content-designs();
 }
@@ -259,9 +275,9 @@ p {
 		display: flex;
 		flex-wrap: wrap;
 		font-size: 2rem;
-		color: #ff4d4d;
+		color: @columns-background;
 		p {
-			background-color: #00FFFF; 
+			background-color: @unique-blue; 
 			margin: 10px;
 			border-radius: 45%;
 		}
@@ -273,7 +289,8 @@ p {
 		display: flex;
 		flex-wrap: wrap;
 		p {
-			background-color: #ff4d4d;
+			color: @columns-background;
+			background-color: @main-text-pink;
 			margin: 10px;
 			border-radius: 10px;
 			line-height: 0.5;
@@ -287,11 +304,13 @@ p {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 	}
 	.right-column {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 
 	}	
 }

@@ -252,12 +252,18 @@ p {
   line-height: 1.5;
   margin-left: 10px;
 }
+.work-experience {
+  border-bottom: 2px dotted #FF99FF;
+}
+.Education {
+  border-bottom: 2px dotted #FF99FF;
+}
 .right-content {
   margin-left: 200px;
 }
 .left-content {
   width: 200px;
-  border-radius: 20%;
+  border-radius: 20px;
   margin: 10px;
   display: flex;
   justify-content: flex-start;
@@ -268,13 +274,14 @@ p {
   font-size: 4rem;
 }
 .left-content p {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
+  line-height: 1;
 }
 .technical-skills .skills {
   display: flex;
   flex-wrap: wrap;
   font-size: 2rem;
-  color: #ff4d4d;
+  color: #680000;
 }
 .technical-skills .skills p {
   background-color: #00FFFF;
@@ -286,7 +293,8 @@ p {
   flex-wrap: wrap;
 }
 .hobbies .content p {
-  background-color: #ff4d4d;
+  color: #680000;
+  background-color: #FF99FF;
   margin: 10px;
   border-radius: 10px;
   line-height: 0.5;
@@ -296,10 +304,12 @@ p {
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .right-column {
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 }
